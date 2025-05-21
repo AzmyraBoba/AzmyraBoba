@@ -1,4 +1,4 @@
-// Mobile Menu Toggle
+// Mobile Menu Toggle (unchanged)
 const burger = document.querySelector('.burger');
 const navLinks = document.querySelector('.nav-links');
 
@@ -6,7 +6,7 @@ burger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
-// Smooth Scroll
+// Smooth Scroll (unchanged)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -16,29 +16,38 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form Submission (Mock Email/Scheduling)
+// Form Submission
 const form = document.getElementById('contact-form');
 const formMessage = document.getElementById('form-message');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const eventDate = document.getElementById('event-date').value;
-    const eventTime = document.getElementById('event-time').value;
-    const message = document.getElementById('message').value;
 
-    // Mock email send (replace with backend logic)
-    console.log('Form Data:', { name, email, eventDate, eventTime, message });
-    formMessage.textContent = 'Thank you! We’ll contact you soon to confirm your event.';
-    formMessage.style.color = '#00d4ff';
-    
-    // Reset form
-    form.reset();
+    const formData = new FormData(form);
+    fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            formMessage.textContent = 'Thank you! Your booking request has been sent.';
+            formMessage.style.color = '#00d4ff';
+            form.reset();
+        } else {
+            formMessage.textContent = 'Oops! Something went wrong. Please try again.';
+            formMessage.style.color = '#ff4444';
+        }
+    })
+    .catch(error => {
+        formMessage.textContent = 'Error: Unable to send request. Check your connection.';
+        formMessage.style.color = '#ff4444';
+    });
 });
 
-// Star Animation (Galaxy Effect)
+// Star Animation (unchanged)
 function createStars() {
     const body = document.body;
     for (let i = 0; i < 100; i++) {
@@ -56,7 +65,6 @@ function createStars() {
     }
 }
 
-// Twinkle Animation
 const style = document.createElement('style');
 style.innerHTML = `
     @keyframes twinkle {
