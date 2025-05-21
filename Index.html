@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azmyra Boba - Catering for Events</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Azmyra Boba</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="burger">☰</div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section hero">
+        <h1>Welcome to Azmyra Boba</h1>
+        <p>Out of this world boba drinks for your cosmic events!</p>
+        <a href="#contact" class="cta-button">Book Now</a>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section">
+        <h2>Our Catering Menu</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3>Classic Boba Tea</h3>
+                <p>Milk tea with chewy tapioca pearls. Customizable flavors.</p>
+            </div>
+            <div class="menu-item">
+                <h3>Fruit Boba</h3>
+                <p>Refreshing fruit-infused teas with popping boba.</p>
+            </div>
+            <div class="menu-item">
+                <h3>Treats</h3>
+                <p>Assorted desserts like mochi and popsicles for events.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <h2>Event Gallery</h2>
+        <div class="gallery-grid">
+            <img src="https://i.pinimg.com/736x/13/72/98/1372984fa30b23c59157499167ea64d9.jpg" alt="Event 1">
+            <img src="https://assets.hvmag.com/2023/05/V6fReLGb-Hudson-Valley-Bubble-Tea.jpg" alt="Event 2">
+            <img src="https://www.thedailymeal.com/img/gallery/the-ultimate-guide-to-japanese-mochi/intro-1679325585.jpg" alt="Event 3">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About Azmyra Boba</h2>
+        <p>We bring the stars to your events with our unique boba catering. From weddings, corporate parties, and birthday parties our drinks add a cosmic touch. Let us make your event unforgettable!</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact & Schedule</h2>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <input type="date" id="event-date" required>
+            <input type="time" id="event-time" required>
+            <textarea id="message" placeholder="Event Details" required></textarea>
+            <button type="submit">Send Request</button>
+        </form>
+        <p id="form-message"></p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
