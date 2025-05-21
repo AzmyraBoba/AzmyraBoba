@@ -193,7 +193,11 @@ input, textarea {
     color: #fff;
     z-index: 100;
 }
-
+input#name::placeholder,
+input#email::placeholder {
+    color: #fff; /* White placeholder text */
+    opacity: 0.8; /* Slightly reduced opacity for distinction */
+}
 textarea {
     resize: vertical;
     min-height: 100px;
